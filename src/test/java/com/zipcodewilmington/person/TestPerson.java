@@ -56,16 +56,21 @@ public class TestPerson {
         // Given
         Integer expectedAge = 5;
         String expectedName = "Leon";
+        String expectedGender = "M";
+        Boolean expectedGOT = true;
 
         // When
-        Person person = new Person(expectedName, expectedAge);
+        Person person = new Person(expectedName, expectedAge, expectedGender);
 
         // Then
         Integer actualAge = person.getAge();
         String actualName = person.getName();
+        String actualGender = person.getGender();
+
 
         Assert.assertEquals(expectedAge, actualAge);
         Assert.assertEquals(expectedName, actualName);
+        Assert.assertEquals(expectedGender, actualGender);
     }
 
     @Test
@@ -95,4 +100,28 @@ public class TestPerson {
         Integer actual = person.getAge();
         Assert.assertEquals(expected, actual);
     }
+
+
+    @Test
+    public void setGender(){
+        //Given
+        Person person = new Person();
+        String expected = "";
+
+        //When
+        person.setGender(expected);
+
+        //Then
+        String actual = person.getGender();
+        Assert.assertEquals(expected, actual);
+    }
+
+
+
+
+
+
+
 }
+
+
